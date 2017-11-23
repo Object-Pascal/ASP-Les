@@ -1,0 +1,21 @@
+﻿@model RazorModel
+
+@for (int i = 0; i < Model.users.Length; i++)
+{
+    <h2>@Model.users[i].name @Model.users[i].lastName</h2>
+    <h3>@Model.users[i].GetAge()</h3>
+    <br />
+}
+
+<hr />
+
+@{ 
+    Model.SetNewUsers();
+}
+
+@for (int i = 0; i < Model.users.Length; i++)
+{
+    <h2>@Model.users[i].name @Model.users[i].lastName</h2>
+    <h3>@Model.users[i].GetAge()</h3>
+    <br />
+}

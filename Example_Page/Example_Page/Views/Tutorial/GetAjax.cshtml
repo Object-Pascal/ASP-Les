@@ -1,0 +1,19 @@
+﻿<button onclick="GetAjax">Send message</button>
+
+<script>
+    function GetAjax() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("AjaxGet", "Tutorial")',
+            DataType: "text",
+            success: function (response) {
+                $('#carousel-container').append(response.testHTML);
+            },
+            error: function (response) {
+            }
+        });
+    }
+</script>
+
+<div id="messageBox">
+</div>
