@@ -6115,7 +6115,9 @@ body.modal-open,
 .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: auto;
+    margin: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 /* Hide the images by default */
