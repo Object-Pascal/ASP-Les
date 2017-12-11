@@ -1,1 +1,27 @@
-﻿
+﻿<button id="button" onclick="GetPartialView()">Get partial view</button>
+
+<br /><br />
+
+<div id="partial-container">
+</div>
+
+<script>
+    function GetPartialView() {
+        $("#button").html("Loading...");
+
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("AjaxPartial", "Tutorial")',
+            dataType: "Text",
+
+            success: function (response) {
+                $('#partial-container').html(response);
+                $("#button").html("Get partial view");
+            },
+            error: function () {
+                alert("Error while trying to get the partial view");
+                $("#button").html("Get partial view");
+            }
+        });
+    }
+</script>

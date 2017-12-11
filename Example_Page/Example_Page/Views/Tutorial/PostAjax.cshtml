@@ -1,1 +1,64 @@
-﻿
+﻿<input id="input-full-name" value="Pascal Stoop" />
+<input id="input-school" value="Radius College" />
+<input id="input-age" value="19" />
+<input id="input-date-of-birth" value="01-09-1998" />
+
+<button id="button" onclick="SetProfileData()">Set profile data</button>
+
+<br /><br />
+
+<table>
+    <tr>
+        <th>Full name</th>
+        <th>School</th>
+        <th>Age</th>
+        <th>Date of birth</th>
+    </tr>
+    <tr>
+        <td id="full-name"></td>
+        <td id="school"></td>
+        <td id="age"></td>
+        <td id="date-of-birth"></td>
+    </tr>
+</table>
+
+<script>
+    function SetProfileData() {
+        $("#button").html("Loading...");
+
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("AjaxPost", "Tutorial")',
+            data: {
+                fullName: $("#input-full-name").val(),
+                school: $("#input-school").val(),
+                age: $("#input-age").val(),
+                dateOfBirth: $("#input-date-of-birth").val()
+            },
+
+            success: function (response) {
+                $('#full-name').html(response.fullName);
+                $('#school').html(response.school);
+                $('#age').html(response.age);
+                $('#date-of-birth').html(response.dateOfBirth);
+
+                $("#button").html("Set profile data");
+            },
+            error: function () {
+                alert("Error while trying to set the profile data");
+                $("#button").html("Set profile data");
+            }
+        });
+    }
+</script>
+
+<style>
+    td, th {
+        width: 150px;
+        text-align: center;
+    }
+
+    input {
+        width: 250px;
+    }
+</style>

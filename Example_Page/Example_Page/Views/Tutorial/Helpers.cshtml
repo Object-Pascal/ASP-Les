@@ -1,1 +1,27 @@
-﻿
+﻿@Html.ActionLink("Helpers", "Helpers", "Tutorial")
+
+<br /><br />
+
+
+<a href="@Url.Action("Helpers", "Tutorial")">Helpers</a>
+
+<br /><br />
+
+@*<p>@Url.Action("Helpers", "Tutorial")</p>*@
+<!--<p>@Url.Action("Helpers", "Tutorial")</p>-->
+
+<br /><br />
+
+@Html.Raw(HtmlHelperExtensions.profilePicture)
+
+<br /><br />
+
+@HtmlHelperExtensions.profilePictureHtml
+
+<br /><br />
+
+@Html.ProfilePicture()
+
+<br /><br />
+
+@Html.Image(@"/Content/Profile.jpg", 150, 150)

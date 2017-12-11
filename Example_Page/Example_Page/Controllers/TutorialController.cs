@@ -47,22 +47,39 @@ namespace Example_Page.Controllers
 
         public ActionResult Sessions()
         {
+            Session["test"] = "test";
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Sessions(string txtName, string txtLastName, int txtAge)
+        {
+            UserSession.currentUser.name = txtName;   
+            UserSession.currentUser.lastName = txtLastName;   
+            UserSession.currentUser.age = txtAge;
             return View();
         }
 
 
         // Ajax actions
+        [HttpGet]
         public JsonResult AjaxGet()
         {
-            string html = @"<div class='item'><h1>Test2</h1></div>";
-            return Json(new { testHTML = html }, JsonRequestBehavior.AllowGet);
+            string fullName = "Pascal Stoop";
+            string school = "Radius College";
+            string age = "19";
+            string dateOfBirth = "01-09-1998";
+
+            return Json(new { fullName = fullName, school = school, age = age, dateOfBirth = dateOfBirth }, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult AjaxPost()
+        [HttpPost]
+        public JsonResult AjaxPost(ProfileModel values)
         {
-            return Json(new { }, JsonRequestBehavior.AllowGet);
+            return Json(new { fullName = values.fullName, school = values.school, age = values.age, dateOfBirth = values.dateOfBirth }, JsonRequestBehavior.AllowGet);
         }
 
+        [HttpGet]
         public PartialViewResult AjaxPartial()
         {
             return PartialView("PartialViewTest");

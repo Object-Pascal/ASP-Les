@@ -4,8 +4,8 @@
 <h3>@Model.GetAge() jaar</h3>
 
 <form method="post">
-    Name: <input name="txtName" style="width: 200px" value="@Model.name" />
-    Lastname: <input name="txtLastName" style="width: 200px" value="@Model.lastName" />
-    Age: <input type="number" name="txtAge" style="width: 200px" value="@Model.GetAge()" />
+    Name: <input name="txtName" style="width: 200px" value="@Model.name" required/>
+    Lastname: <input name="txtLastName" style="width: 200px" value="@Model.lastName" required/>
+    Age: <input type="number" name="txtAge" style="width: 200px" value="@Model.GetAge()" required/>
     <input type="submit" style="width: 200px" />
 </form>

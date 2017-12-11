@@ -1,1 +1,11 @@
-﻿
+﻿@model TutorialModel
+
+<h2>@UserSession.currentUser.name @UserSession.currentUser.lastName</h2>
+<h3>@UserSession.currentUser.GetAge() jaar</h3>
+
+<form method="post">
+    Name: <input name="txtName" style="width: 200px" value="@UserSession.currentUser.name" required/>
+    Lastname: <input name="txtLastName" style="width: 200px" value="@UserSession.currentUser.lastName" required/>
+    Age: <input type="number" name="txtAge" style="width: 200px" value="@UserSession.currentUser.GetAge()" required/>
+    <input type="submit" style="width: 200px" />
+</form>
