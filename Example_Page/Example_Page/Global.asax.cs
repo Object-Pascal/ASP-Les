@@ -21,5 +21,9 @@ namespace Example_Page
         {
             UserSession.AllocateSessionVariables();
         }
+        void Session_Start(object sender, EventArgs e)
+        {
+            Session["showNav"] = true;
+        }
     }
 }

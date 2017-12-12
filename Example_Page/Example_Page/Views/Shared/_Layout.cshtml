@@ -9,38 +9,43 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="col-md-12" style="padding-top: 25px; width: 100%; text-align: center;">
-        <div class="col-md-2">
-            <a href="@Url.Action("Index", "Test")">Controllers</a>
+    @if ((bool)Session["showNav"])
+    {
+        <div class="col-md-12" style="padding-top: 25px; width: 100%; text-align: center;">
+            <div class="col-md-2">
+                <a href="@Url.Action("Index", "Test")">Controllers</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Models", "Tutorial")">Models & Posting</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Razor", "Tutorial")">Razor Syntax</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Helpers", "Tutorial")">HTML Helpers</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("GetAjax", "Tutorial")">Ajax Getting</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("PostAjax", "Tutorial")">Ajax Posting</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("PartialViews", "Tutorial")">Partial Views & Ajax</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Sessions", "Tutorial")">Sessions</a>
+            </div>
+            <div class="col-md-2">
+                <a href="@Url.Action("Powerpointer", "Powerpoint")">Power Point</a>
+            </div>
         </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("Models", "Tutorial")">Models & Posting</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("Razor", "Tutorial")">Razor Syntax</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("Helpers", "Tutorial")">HTML Helpers</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("GetAjax", "Tutorial")">Ajax Getting</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("PostAjax", "Tutorial")">Ajax Posting</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("PartialViews", "Tutorial")">Partial Views & Ajax</a>
-        </div>
-        <div class="col-md-2">
-            <a href="@Url.Action("Sessions", "Tutorial")">Sessions</a>
-        </div>
-    </div>
+    }
 
-    <div class="container" style="padding-top: 50px">
+    <div>
         <hr />
         @RenderBody()
     </div>
-
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
