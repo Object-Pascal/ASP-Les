@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
+<head style="height: 100%">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Page</title>
@@ -8,9 +8,13 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body>
+<body style="height: 100%; margin: 0px;">
+    @{ 
+        string divClass = "";
+    }
     @if ((bool)Session["showNav"])
     {
+        divClass = "class=container";
         <div class="col-md-12" style="padding-top: 25px; width: 100%; text-align: center;">
             <div class="col-md-2">
                 <a href="@Url.Action("Index", "Test")">Controllers</a>
@@ -42,8 +46,11 @@
         </div>
     }
 
-    <div>
-        <hr />
+    <div @(divClass) style="height: 100%;">
+        @if ((bool)Session["showNav"])
+        {
+            <hr />
+        }
         @RenderBody()
     </div>
     @Scripts.Render("~/bundles/bootstrap")

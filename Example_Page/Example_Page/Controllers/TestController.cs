@@ -10,6 +10,7 @@ namespace Example_Page.Models
     {
         public ActionResult Index()
         {
+            Session["showNav"] = true;
             return View();
         }
     }
