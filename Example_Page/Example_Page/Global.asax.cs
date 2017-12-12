@@ -20,9 +20,6 @@ namespace Example_Page
         void Session_Start(object sender, EventArgs e)
         {
             UserSession.AllocateSessionVariables();
-        }
-        void Session_Start(object sender, EventArgs e)
-        {
             Session["showNav"] = true;
         }
     }
