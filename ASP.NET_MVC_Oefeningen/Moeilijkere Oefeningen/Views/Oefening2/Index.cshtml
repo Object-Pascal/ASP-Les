@@ -1,0 +1,36 @@
+﻿@model Moeilijkere_Oefeningen.Models.OefeningModel
+
+<h2>Index</h2>
+
+<div class="panel panel-body">
+
+</div>
+
+<div class="panel panel-body" id="partialDiv">
+
+</div>
+
+<input type="button" id="btnGet" value="Render partial using a Ajax Request" />
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $("#btnGet").click(function () {
+                $.ajax({
+                    type: "Post",
+                    url: "/Oefening2/RenderPartial",
+                    dataType: "",
+                    success: function (response) {
+                        $("#partialDiv").html(response);
+                    },
+                    failure: function (response) {
+                        alert("AjaxFailure");
+                    },
+                    error: function (response) {
+                        alert("AjaxError");
+                    }
+                });
+            });
+        });
+</script>
+

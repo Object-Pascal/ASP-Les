@@ -1,0 +1,14 @@
+﻿@model Moeilijkere_Oefeningen.Models.OefeningModel
+
+<h2>Index</h2>
+
+<form method="post">
+    <input name="username" value="@Model.Username" />
+    <input name="password" value="@Model.Password" />
+    <input name="email" value="@Model.Email" />
+
+    <input type="submit" style="width: 200px" />
+</form>
+
+@Html.ActionLink("Go to session", "SessionView")
+
