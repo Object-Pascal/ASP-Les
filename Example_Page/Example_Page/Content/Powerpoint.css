@@ -1,11 +1,16 @@
-﻿img {
+﻿img, html, body, .powerpoint-container {
     height: 100%;
     width: 100%;
+}
+
+body {
+    margin: 0;
 }
 
 .slideshow-container, .mySlides {
     float: left;
     height: 100%;
     width: 100%;
+    max-width: none;
 }
 

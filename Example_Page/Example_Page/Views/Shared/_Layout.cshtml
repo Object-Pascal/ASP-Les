@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
-<head style="height: 100%">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Page</title>
@@ -8,9 +8,9 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body style="height: 100%; margin: 0px;">
+<body>
     @{ 
-        string divClass = "";
+        string divClass = "class=powerpoint-container";
     }
     @if ((bool)Session["showNav"])
     {
@@ -46,7 +46,7 @@
         </div>
     }
 
-    <div @(divClass) style="height: 100%;">
+    <div @(divClass)>
         @if ((bool)Session["showNav"])
         {
             <hr />
