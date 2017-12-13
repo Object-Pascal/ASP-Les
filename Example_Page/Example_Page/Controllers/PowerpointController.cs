@@ -14,5 +14,11 @@ namespace Example_Page.Controllers
             Session["showNav"] = false;
             return View();
         }
+
+        public ActionResult RedirectHomePage()
+        {
+            Session["showNav"] = true;
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
